@@ -1,0 +1,133 @@
+@font-face {
+    font-family: myfon;
+    src: url("../../assets/JimmyScript-Rg.otf");
+}
+
+nav {
+    background-color: #ffdb65;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* height: 12% !important; */
+}
+
+.logoFont {
+    width: 190px;
+    height: 55px !important;
+    border: 2px #f2f2f2 solid;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    padding: 15px;
+}
+
+.Logo {
+    font-family: myfon;
+    font-size: 40px;
+    text-align: center;
+    color: #101a47;
+    text-shadow: 2px 4px 2px rgba(65, 105, 225, .85);
+
+    /* animation-duration: 3s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition:10s; */
+    animation: fadeInAnimation ease 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+}
+
+@keyframes fadeInAnimation {
+
+    0% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+
+.nav-item {
+    background-color: aliceblue;
+    margin-right: 25px;
+    width: 190px;
+    height: 50px;
+    border-radius: 10px;
+
+    box-shadow: inset -4px -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav-link2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 60O;
+    font-size: 20px;
+    line-height: 22px;
+
+    color: #000000;
+
+    
+}
+.accueil:hover {
+    background-color: #0f1945 !important;
+    margin-right: 25px;
+    width: 190px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: inset -4px -2px 4px rgb(0 0 0 / 25%);
+    opacity: .75;
+}
+
+.tirage:hover {
+    background-color: #0f1945 !important;
+    margin-right: 25px;
+    width: 190px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: inset -4px -2px 4px rgb(0 0 0 / 25%);
+    opacity: .75;
+}
+.nav-link2:hover{
+    color: #ffffff;
+}
+.nav-link1:hover{
+    color: #ffffff;
+}
+
+@media screen and (max-width: 991px) {
+    .nav-link{
+        font-size: 25px;
+        letter-spacing: 3px;
+
+    }
+    .nav-link1{
+        padding-bottom: 50px !important;
+    }
+    .nav-item {
+        background-color: aliceblue;
+        margin-right: 15px;
+        margin-top: 5%;
+        width: 90%;
+        height: 50px;
+        border-radius: 10px;
+    }
+    .accueil:hover {
+        background-color: #0f1945 !important;
+        margin-right: 15px;
+        margin-top: 5%;
+        width: 90%;
+        height: 50px;
+        border-radius: 10px;
+        box-shadow: inset -4px -2px 4px rgb(0 0 0 / 25%);
+    }
+    
+    .tirage:hover {
+        background-color: #0f1945 !important;
+        margin-right: 15px;
+        margin-top: 5%;
+        width: 90%;
+        height: 50px;
+        border-radius: 10px;
+        box-shadow: inset -4px -2px 4px rgb(0 0 0 / 25%);
+    }
+}

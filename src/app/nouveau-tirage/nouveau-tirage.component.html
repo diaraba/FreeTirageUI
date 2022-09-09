@@ -1,0 +1,74 @@
+<div class="container-fluid">
+
+    <h2 class="mt-4">LIBELE TIRAGE</h2>
+    <hr>
+</div>
+
+<form class="container form1 p-3 mt-5 bg-body rounded">
+
+    <div class="container">
+        <div class="row m-5 m-5 ml-2 mr-2">
+            <div class="col-4"><label for="libelleTirage"> LIBELLE TIRAGE </label></div>
+            <div class="col-8"><input type="text" formControlName="libelleTirage" class="form-control" id="first_name">
+            </div>
+        </div>
+        <div class="row m-5 ml-2 mr-2">
+            <div class="col-4"><label for="nombreTirage"> NOMBRE DEMANDE </label></div>
+            <div class="col-8"><input type="text" formControlName="nombreDemander" class="form-control"
+                    id="nombreTirage">
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-4"><label for="libelleListe">LIBELLE LISTE</label></div>
+            <div class="col-6">
+                <select class="form-select mb-3" formControlName="filiere">
+                    <option selected>Libelle 1</option>
+                    <option value="GME">Libelle 2</option>
+                    <option value="GEEA">Libelle 3</option>
+                    <option value="GEOLOGIE">Libelle 4</option>
+                    <option value="GENIE CIVIL">Libelle 5</option>
+                    <option value="TOPOLOGIE">Libelle 6</option>
+                </select>
+            </div>
+            <div class="col-2"> <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#AddEtudiant">importer fichier <i class="bi bi-upload"></i></button> </div>
+        </div>
+
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-lg btn-outline-success" data-bs-dismiss="modal"> TRIE </button>
+    </div>
+</form>
+
+<div class="modal fade" id="AddEtudiant">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-body">
+                <div class="card border-0 shadow p-3">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-4"> <label for="exampleInputEmail1" class="form-label">LIBELLE LISTE</label>
+                            </div>
+                            <div class="col-8">
+                                <input required type="text" class="form-control" name="libelleListe">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-8">
+                                <input type="file" class="text-nowrap text-truncate file">
+                            </div>
+
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal"><i
+                                    class="bi bi-upload"></i>
+                                Upload</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

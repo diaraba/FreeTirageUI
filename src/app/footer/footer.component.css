@@ -1,0 +1,16 @@
+@font-face {
+    font-family: myfon;
+    src: url("../../assets/JimmyScript-Rg.otf");
+}
+.div{
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+span{
+    font-family: myfon;
+}
+.SloganStyle{
+    font-size: 18px; 
+    font-weight: bold;
+    text-decoration: none;
+}

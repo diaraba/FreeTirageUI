@@ -1,44 +1,32 @@
-<!-- <div class="position-relative">
-    <div class="position-absolute top-0 start-0 rectangle">
-        
-        <p class="text-end">22</p>
-        <p class="text-end">Nombre Total de liste Tiré.</p>
-    </div>
-    <div class="position-absolute top-0 end-0 rectangle"></div>
-</div> -->
-
-
 <div class="container-fluid">
 
-    <h2 class="mt-4">Statistique</h2>
+    <h2 class="mt-4">LIBELE TIRAGE</h2>
     <hr>
 </div>
-
-
  <div class="mat-elevation-z8 mt-2 posit">
     <table mat-table [dataSource]="dataSource">
    
       <!-- Position Column -->
        <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> Libelle Liste </th>
-        <td mat-cell *matCellDef="let element" routerLink="/liste-details"> {{element.position}} </td>
+        <th mat-header-cell *matHeaderCellDef> Nom </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
       </ng-container> 
   
       <!-- Name Column -->
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Nombre Total de Tirage par Liste </th>
+        <th mat-header-cell *matHeaderCellDef> Prénom </th>
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
       </ng-container> 
   
       <!-- Weight Column -->
        <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <th mat-header-cell *matHeaderCellDef> Email </th>
         <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
       </ng-container> 
   
       <!-- Symbol Column -->
     <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <th mat-header-cell *matHeaderCellDef> Numéro </th>
         <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
       </ng-container> 
   
@@ -51,4 +39,3 @@
                    aria-label="Select page of periodic elements">
     </mat-paginator>
   </div> 
-  

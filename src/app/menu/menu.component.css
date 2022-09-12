@@ -100,8 +100,9 @@ nav {
         letter-spacing: 3px;
 
     }
-    .nav-link1{
-        padding-bottom: 50px !important;
+    
+    .accueil{
+        padding-bottom: 50px;
     }
     .nav-item {
         background-color: aliceblue;

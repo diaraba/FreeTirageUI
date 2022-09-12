@@ -14,6 +14,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { NouveauTirageComponent } from './nouveau-tirage/nouveau-tirage.component'
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, NgForm } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatPaginatorModule,
     MatFormFieldModule,
     MatSelectModule,
+    HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule
   ],
   providers: [],

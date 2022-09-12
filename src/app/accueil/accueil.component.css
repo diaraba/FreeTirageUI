@@ -1,31 +1,39 @@
 @font-face {
-    font-family: Roboto;
-    src: url("../../assets/Roboto-Medium.ttf");
+  font-family: Roboto;
+  src: url("../../assets/Roboto-Medium.ttf");
 }
+
 table {
-    width: 100%;
-    margin: 10px;
+  width: 100%;
+  margin: 2px;
 
-  }
-  .posit{
-margin-left: 5%;
-margin-right: 30%;
-padding-right: 0%;
-margin:0px;
 }
-td{
 
-    font-family: Roboto;
-    font-size: 20px;
+td {
+
+  font-family: Roboto !important;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
 
-.rectangle{
-    height: 75px;
-    width: 250px;
-    border-color: red;
-    border-width: 2px;
-    border-style: solid;
-    background-image: linear-gradient(to right top, #87d16b, #00c794, #00b7ba, #00a2cf, #0089cb, #017cba, #016fa9, #006398, #005f80, #1b5867, #305053, #3d4645);
-    box-shadow: 2px 3px 2px #87d16b;
+.my-card {
+  position: absolute;
+  left: 40%;
+  top: -20px;
+  border-radius: 50%;
+}
+
+.button {
+  background-color: #FFFFFF;
+  font-size: 16px;
+  border: 0px;
+  box-shadow: 2px 2px 2px darkgray;
+}
+
+.button:active {
+  background-color: #FFFFFF;
+  font-size: 16px;
+  border: 0px;
+  box-shadow: 2px 2px 2px darkgray inset;
 }

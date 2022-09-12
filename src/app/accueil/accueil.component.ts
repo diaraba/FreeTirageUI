@@ -16,15 +16,12 @@ export class AccueilComponent implements OnInit {
   //obserbeListeDetail!: Observable<ListeDetail[]>;
    detailListe!: ListeDetail[];
   errorMessage = '';
-  constructor(private listeDetailService: ListeDetailsService) { 
-    // this.obserbeListeDetail = this.listeDetailService.GetListeDetails();
-    // this.obserbeListeDetail.subscribe(
-    //   detailList => this.detailListe = detailList,
-    //    error => this.errorMessage = error
-    // )
+  url = "/liste-details"
+  constructor(private listeDetailService: ListeDetailsService) {
+
   }
-   
-  
+
+
 
   ELEMENT_DATA!: ListeDetail[];
   displayedColumns: string[] = ['libellel', 'datel', 'Action'];
@@ -34,15 +31,15 @@ export class AccueilComponent implements OnInit {
     this.listeDetailService.getListeDetails().subscribe((data: ListeDetail[]) =>{
       console.log(data)
       this.dataSource.data = data;
-      
+
     })
   }
-  
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-  
+
 }
 
 

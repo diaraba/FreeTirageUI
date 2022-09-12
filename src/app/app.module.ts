@@ -14,15 +14,17 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { NouveauTirageComponent } from './nouveau-tirage/nouveau-tirage.component'
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, NgForm } from '@angular/forms';
+import { ListeDetailsComponent } from './liste-details/liste-details.component';
+import { TirageDetailsComponent } from './tirage-details/tirage-details.component';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     FooterComponent,
     AccueilComponent,
-    NouveauTirageComponent
+    NouveauTirageComponent,
+    ListeDetailsComponent,
+    TirageDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,8 +35,6 @@ import { FormsModule, NgForm } from '@angular/forms';
     MatPaginatorModule,
     MatFormFieldModule,
     MatSelectModule,
-    HttpClientModule,
-    FormsModule,
     BrowserAnimationsModule
   ],
   providers: [],

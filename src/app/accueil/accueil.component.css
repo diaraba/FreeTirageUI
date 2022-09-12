@@ -37,3 +37,13 @@ td {
   border: 0px;
   box-shadow: 2px 2px 2px darkgray inset;
 }
+.button1 {
+  background-color: #FFFFFF;
+  border: 0px;
+  box-shadow: 2px 2px 2px darkgray inset;
+}
+.button1:active {
+  background-color: #FFFFFF;
+  border: 0px;
+  box-shadow: 2px 2px 2px darkgray;
+}

@@ -40,9 +40,9 @@
 
           <!-- Symbol Column -->
           <ng-container matColumnDef="Action">
-            <th mat-header-cell *matHeaderCellDef class="text-center"> Action</th>
+            <th mat-header-cell *matHeaderCellDef class="text-center" > Action</th>
             <td mat-cell *matCellDef="let element">
-              <button class="button">view</button>
+              <button class="button"  [routerLink]="url">view</button>
             </td>
           </ng-container>
 
@@ -50,9 +50,9 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
 
-        <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
           aria-label="Select page of periodic elements">
-        </mat-paginator> -->
+        </mat-paginator>
       </div>
     </div>
     <div class="col">

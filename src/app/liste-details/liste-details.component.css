@@ -8,3 +8,9 @@ margin-left: 5%;
 margin-right: 30%;
 padding-right: 0%;
 }
+.button {
+  background-color: #FFFFFF;
+  font-size: 16px;
+  border: 0px;
+  box-shadow: 2px 2px 2px darkgray;
+}

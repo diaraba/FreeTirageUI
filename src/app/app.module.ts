@@ -18,6 +18,7 @@ import { ListeDetailsComponent } from './liste-details/liste-details.component';
 import { TirageDetailsComponent } from './tirage-details/tirage-details.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { DetailTirageComponent } from './detail-tirage/detail-tirage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import {HttpClientModule} from "@angular/common/http";
     AccueilComponent,
     NouveauTirageComponent,
     ListeDetailsComponent,
-    TirageDetailsComponent
+    TirageDetailsComponent,
+    DetailTirageComponent
   ],
   imports: [
     BrowserModule,

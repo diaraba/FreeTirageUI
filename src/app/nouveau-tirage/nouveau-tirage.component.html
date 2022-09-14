@@ -2,37 +2,38 @@
 
 <div class="container-fluid">
 
-    <h2 class="mt-4">STATISTIQUE</h2>
+    <h2 class="mt-4">Nouveau Tirage</h2>
     <hr>
 </div>
-<form  class=" form1 p-3 mt-5 mb-5 w-70  rounded">
+<form  class=" form1 container p-3 mt-5 mb-5  rounded">
     <div class="container">
         <div class="row m-3 ml-2 mr-2">
-            <div class="col-4"><label for="libelleTirage"> LIBELLE TIRAGE </label></div>
+            <div class="col-4"><label for="libelleTirage"> Libelle Tirage </label></div>
             <div class="col-8"><input type="text" name="libellel" [(ngModel)]="libelletirage" class="form-control"
                     id="libelleTirage">
             </div>
         </div>
         <div class="row m-3 ml-2 mr-2">
-            <div class="col-4"><label for="nombreTirage"> NOMBRE DEMANDE </label></div>
-            <div class="col-8"><input type="text" name="nbredemande" [(ngModel)]="nbredemande" class="form-control"
+            <div class="col-4"><label for="nombreTirage"> Nombre Demande </label></div>
+            <div class="col-8"><input type="number" name="nbredemande" [(ngModel)]="nbredemande" class="form-control"
                     id="nombreTirage">
+
             </div>
         </div>
         <div class="row m-3">
-            <div class="col-4"><label for="libelleListe">LIBELLE LISTE</label></div>
+            <div class="col-4"><label for="libelleListe">Libelle Liste</label></div>
             <div class="col-5">
                 <select id="libelleListe" class="form-select mb-3" [(ngModel)]="libelleliste" name="libelleliste">
                     <option selected *ngFor="let detailliste of detailListe"> {{detailliste.libellel}} </option>
                 </select>
             </div>
-            <div class="col-3"> <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+            <div class="col-3"> <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
                     data-bs-target="#AddEtudiant">importer fichier <i class="bi bi-upload"></i></button> </div>
         </div>
 
     </div>
     <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="submit" class="btn btn-lg btn-outline-success" (click)="CreerTirage()"> TRIE </button>
+        <button type="submit" class="btn btn-lg btn-outline-success" (click)="CreerTirage()"> Effectuer Tirage </button>
     </div>
 </form>
 
@@ -47,19 +48,19 @@
                             <div class="col-4"> <label for="Listelibelle" class="form-label">LIBELLE LISTE</label>
                             </div>
                             <div class="col-8">
-                                <input required type="text" id="Listelibelle" class="form-control" name="libelleListe">
+                                <input required type="text" id="Listelibelle" class="form-control" name="libelleListe"  [(ngModel)]="libelleliste">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-8">
-                                <input type="file" class="text-nowrap text-truncate file">
+                                <input type="file" (change)="envoiFichier($event)" class="text-nowrap text-truncate file">
                             </div>
 
                         </div>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal"><i
+                            <button type="submit" (click)="envoyerFichierParLeService()"  class="btn btn-outline-success" data-bs-dismiss="modal"><i
                                     class="bi bi-upload"></i>
-                                Upload</button>
+                                Télécharger</button>
                         </div>
                     </form>
                 </div>
@@ -68,3 +69,4 @@
         </div>
     </div>
 </div>
+

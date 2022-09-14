@@ -9,12 +9,7 @@ table {
 
 }
 
-td {
 
-  font-family: Roboto !important;
-  font-size: 13px;
-  letter-spacing: 2px;
-}
 
 
 .my-card {
@@ -23,17 +18,50 @@ td {
   top: -20px;
   border-radius: 50%;
 }
+.inputCherche{
+  padding: 2px;
+  border-width: 1px;
+}
+.inputCherche:focus{
+  padding: 2px;
+  outline: none;
+}
+.inputChercheButton{
 
+  padding: 2px;
+  border-radius: 0px 5px 5px 0px;
+  border-width: 1px;
+  border-color: grey;
+  width: 3em;
+
+}
+.button1 {
+  background-color: #FFFFFF;
+  border: 0px;
+  box-shadow: 2px 2px 2px darkgray inset;
+}
+.button1:active {
+  background-color: #FFFFFF;
+  border: 0px;
+  box-shadow: 2px 2px 2px darkgray;
+}
 .button {
   background-color: #FFFFFF;
   font-size: 16px;
   border: 0px;
-  box-shadow: 2px 2px 2px darkgray;
+  font-weight: lighter;
+  cursor: pointer;
 }
 
 .button:active {
   background-color: #FFFFFF;
   font-size: 16px;
   border: 0px;
-  box-shadow: 2px 2px 2px darkgray inset;
+  box-shadow: 1px 1px 1px darkgray inset;
+}
+
+h1{
+  font-size: 80px;
+  font-weight: bolder;
+  text-shadow: 5px 5px 2px rgb(205, 215, 255);
 }

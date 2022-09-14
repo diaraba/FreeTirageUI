@@ -5,6 +5,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { ListeDetail } from '../models/liste-detail.model';
 import { ListeDetailsService } from '../services/listedetails/liste-details.service';
+import {TirageService} from "../services/tirage/tirage.service";
 
 @Component({
   selector: 'app-accueil',
@@ -12,16 +13,10 @@ import { ListeDetailsService } from '../services/listedetails/liste-details.serv
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-
-  //obserbeListeDetail!: Observable<ListeDetail[]>;
    detailListe!: ListeDetail[];
-  errorMessage = '';
   url = "/liste-details"
-  constructor(private listeDetailService: ListeDetailsService) {
 
-  }
-
-
+  constructor(private listeDetailService: ListeDetailsService, private tirageService: TirageService) {}
 
   ELEMENT_DATA!: ListeDetail[];
   displayedColumns: string[] = ['libellel', 'datel', 'Action'];
@@ -33,7 +28,12 @@ export class AccueilComponent implements OnInit {
       this.dataSource.data = data;
 
     })
+    //METHODE PERMETTANT DE RECUPERER L'ID DE LA LISTE EN ENVOYANT DANS LA METHODE PERMETTANT DE RETOURNER LE NOMBRE DE TIRAGE PAR LISTE
+
+
+
   }
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit() {

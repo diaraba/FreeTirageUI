@@ -10,8 +10,17 @@ span{
     font-family: myfon;
 }
 .SloganStyle{
-    font-size: 18px; 
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: lighter;
     text-decoration: none;
+}
+.footer{
+
+  position: absolute; bottom: 0; left: 0; right: 0;
+}
+@media screen and (max-width: 960px) {
+  .footer{
+    position: initial; bottom: 0; left: 0; right: 0;
+  }
 }
 

@@ -7,14 +7,53 @@ h2 {
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.15em;
-
-    color: #000000;
+    letter-spacing: 5px !important;
+    text-shadow: 2px 2px 2px darkgray;
+    color: #0c28a5 !important;
 
 }
+th {
 
+  font-family: Roboto !important;
+  font-size: 15px !important;
+  letter-spacing: 2px;
+  font-weight: bolder !important;
+}
+.lien{
+  text-decoration: none;
+  color: black;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.cursor{
+
+}
 hr {
     border: 5px solid rgba(0, 0, 0, 0.2);
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+}
+
+
+@media screen and (max-width: 991px) {
+  th {
+
+    font-family: Roboto !important;
+    font-size: 10px !important;
+    letter-spacing: 2px;
+    font-weight: bolder !important;
+  }
+  .lien{
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    font-size: 10px !important;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+  }
+  /* .form1 {
+      margin-bottom: 150px !important;
+  } */
+
 }

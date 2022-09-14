@@ -8,37 +8,41 @@
 
  <div class="mat-elevation-z8 mt-2 posit">
     <table mat-table [dataSource]="dataSource">
-   
+
       <!-- Position Column -->
-       <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> Libelle Tirage </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container> 
-  
+       <ng-container matColumnDef="libellel">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Libelle Tirage </th>
+        <td mat-cell *matCellDef="let element" class="text-center" [routerLink]=[url,element.libellel] > <a class="lien cursor">{{element.libellel}}</a>  </td>
+      </ng-container>
+
       <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Date du tirage </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-      </ng-container> 
-  
+      <ng-container matColumnDef="datet">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Date du tirage </th>
+        <td mat-cell *matCellDef="let element" class="text-center"> {{element.datet}} </td>
+      </ng-container>
+
       <!-- Weight Column -->
-       <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Nombre de postulant tirer </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-      </ng-container> 
-  
+       <ng-container matColumnDef="nbredemande">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Nombre de postulant tirer </th>
+        <td mat-cell *matCellDef="let element" class="text-center"> {{element.nbredemande}} </td>
+      </ng-container>
+
       <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Action </th>
-        <td mat-cell *matCellDef="let element" routerLink="/tirage-details"> {{element.symbol}} </td>
-      </ng-container> 
-  
+    <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Action </th>
+        <td mat-cell *matCellDef="let element" class="text-center" [routerLink]=[url,element.libellel]>
+          <img src="../../assets/research-paper.png" class="button" height="25" alt="image montrant le button de recherche">
+        </td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
     </table>
-  
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                   showFirstLastButtons 
-                   aria-label="Select page of periodic elements">
-    </mat-paginator>
-  </div> 
+   <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                  showFirstLastButtons
+                  aria-label="Select page of periodic elements">
+   </mat-paginator>
+
+  </div>

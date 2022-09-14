@@ -10,8 +10,8 @@ const routes: Routes = [
   {path:'', component: AccueilComponent},
   {path:'accueil', component: AccueilComponent},
   {path:'tirage', component: NouveauTirageComponent},
-  {path:'liste-details', component: ListeDetailsComponent},
-  {path:'tirage-details', component: TirageDetailsComponent}
+  {path:'liste-details/:id', component: ListeDetailsComponent},
+  {path:'tirage-details/:id', component: TirageDetailsComponent}
 
 
 ];

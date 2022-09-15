@@ -9,7 +9,12 @@ table {
 
 }
 
-
+.border-primary{
+  border-color: #101a47 !important;
+}
+.text-primary{
+  color: #101a47 !important;
+}
 
 
 .my-card {

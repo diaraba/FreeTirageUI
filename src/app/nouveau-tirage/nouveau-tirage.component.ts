@@ -18,7 +18,8 @@ export class NouveauTirageComponent implements OnInit {
   tirageJson: Tirage = {
     idt: 0,
     libellel: '',
-    nbredemande: 0
+    nbredemande: 0,
+    datet: ''
   }
     idt: number = 0;
     libelleliste: string = '';
@@ -49,17 +50,26 @@ export class NouveauTirageComponent implements OnInit {
 
 
   ressetForm(){
-    this.tirageJson.libellel = '';
-    this.tirageJson.nbredemande = 0;
+    this.libelletirage = '';
+    this.nbredemande = 0;
+    this.libelleliste = ''
   }
 
   CreerTirage(){
-    this.tirageJson.libellel = this.libelletirage;
-    this.tirageJson.nbredemande = this.nbredemande;
-    this.tirageService.CreerTirage(this.tirageJson, this.libelleliste).subscribe();
+    if (this.libelletirage == '' || this.nbredemande == 0 || this.libelleliste == '')
+    {
+      alert("VEUILLEZ RENSEIGNER TOUTES LES CHAMPS ")
+    }else {
+      this.tirageJson.libellel = this.libelletirage;
+      this.tirageJson.nbredemande = this.nbredemande;
+      this.tirageService.CreerTirage(this.tirageJson, this.libelleliste).subscribe();
+      this.ressetForm();
+      alert("TIRAGE EFFECTUER AVEC SUCCESS")
+    }
+
     //console.log(this.tirageJson);
     console.log(this.tirageJson.libellel);
-    this.ressetForm();
+
   }
   fichierAEnvoyer!: any;
 
@@ -69,9 +79,11 @@ export class NouveauTirageComponent implements OnInit {
     console.log(this.fichierAEnvoyer)
   }
   envoyerFichierParLeService(){
-    this.importFichierService.importfichier(this.fichierAEnvoyer,this.libelleliste).subscribe(data=>{
+    this.importFichierService.importfichier(this.fichierAEnvoyer,this.libelleliste).subscribe((data)=>{
       console.log(data)
+
     });
+    alert("FICHIER IMPORTER AVEC SUCCESS")
     this.alet();
   }
 }

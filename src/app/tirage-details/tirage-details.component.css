@@ -10,16 +10,10 @@ table {
   padding: 0%;
 }
 .row{
-  margin-bottom: 15px !important;
+  margin-bottom: 25px !important;
 /*  box-shadow: 0px 2px 2px black;*/
 }
-span{
 
-  margin-right: 10px;
-  font-size: 20px;
-  font-weight: bolder;
-  text-shadow: 3px 0px 2px #001427;
-}
 
 .button1 {
   background-color: #FFFFFF;
@@ -28,11 +22,17 @@ span{
   padding: 5px;
   border-radius: 18px 0px 0px 18px;
 }
+.triangle{
+  position: absolute;
+  width: 177px;
+  height: 58px;
+  left: 18px;
+  top: 849px;
+  border-color: black;
+}
 
 .button1:hover {
   background-color: darkblue !important;
-
-
   box-shadow: inset 2px 2px 5px #ffffff;
   color: #FFFFFF;
 }

@@ -18,11 +18,28 @@ export class TirageService {
     return this.http.get<Tirage[]>(`${this.url}`)
   }
 
+  //METHODE PERMETTANT DE RETROUVER LES TIRAGE ¨PAR LISTE
   getTirageParLibelle(libelle: string):Observable<Tirage[]>{
     return this.http.get<Tirage[]>(`${this.url}/afficherliste/${libelle}`)
   }
 
-  getNombreDeTirage(idliste: number):Observable<number>{
+  // METHODE PERMETTANT DE RETROUVER LE TIRAGE PAR LIBELLE TIRAGE
+  getTirageParLibelleL(Libelle: string):Observable<Tirage>{
+    return this.http.get<Tirage>(`${this.url}/trouverTirageParLibelle/${Libelle}`)
+  }
+  getNombreDeTirage(idliste: number):Observable<Object>{
     return this.http.get<number>(`${this.url}/afficherNombreTirage/${idliste}`)
+  }
+
+  getNombreTirageTotal():Observable<number>{
+    return this.http.get<number>(`${this.url}/nombreDeTirageTotal`)
+  }
+
+  getNombreTotalDeListeTire():Observable<number>{
+    return  this.http.get<number>(`${this.url}/nombreTotalDeListeTire`);
+  }
+
+  getNombreTirageParListe():Observable<Object>{
+    return this.http.get<Object>(`${this.url}/nombreTirageParListe`);
   }
 }

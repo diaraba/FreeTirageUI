@@ -6,10 +6,10 @@ h2 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 20px !important;
     letter-spacing: 5px !important;
     text-shadow: 2px 2px 2px darkgray;
-    color: #0c28a5 !important;
+    color: #101a47 !important;
 
 }
 th {
@@ -27,7 +27,12 @@ th {
   font-family: sans-serif;
   cursor: pointer;
 }
+td{
+  font-weight: lighter !important;
+}
 .cursor{
+
+  cursor: pointer;
 
 }
 hr {
@@ -52,8 +57,30 @@ hr {
     letter-spacing: 1px;
     font-family: sans-serif;
   }
-  /* .form1 {
-      margin-bottom: 150px !important;
-  } */
+  h2{
+    font-size: 100%;
+  }
+}
+.barreLateral{
+  color: #ffdb65;
+  margin-right: 20px;
+  font-size: 25px;
+  font-weight: bolder;
+  text-shadow: 2px 0px 2px #001427;
+}
+.titre{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px !important;
+  letter-spacing: 2px !important;
+  text-shadow: 1px 1px 1px darkgray;
+  color: #101a47 !important;
+}
 
+/*
+  Marge Appliquer a notre tableau
+*/
+.marge{
+  margin-bottom: 165px;
 }

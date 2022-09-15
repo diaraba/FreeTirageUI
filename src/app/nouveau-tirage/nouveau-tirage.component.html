@@ -24,6 +24,7 @@
             <div class="col-4"><label for="libelleListe">Libelle Liste</label></div>
             <div class="col-5">
                 <select id="libelleListe" class="form-select mb-3" [(ngModel)]="libelleliste" name="libelleliste">
+                  <option>-- importer un fichier -- </option>
                     <option *ngFor="let detailliste of detailListe"> {{detailliste.libellel}} </option>
                 </select>
             </div>

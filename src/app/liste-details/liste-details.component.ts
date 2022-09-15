@@ -16,17 +16,22 @@ export class ListeDetailsComponent implements OnInit {
   detailListe!: ListeDetail[];
   url = "/tirage-details"
   libelleListe!: string;
-  constructor(private tirageService: TirageService, private route: ActivatedRoute) {}
+  constructor(private detailService: ListeDetailsService,private tirageService: TirageService, private route: ActivatedRoute) {}
   ELEMENT_DATA!: Tirage[];
   displayedColumns: string[] = ['libellel', 'datet','nbredemande', 'Action'];
   dataSource = new MatTableDataSource<Tirage>(this.ELEMENT_DATA);
 
+  dateCreationListe!: string
   ngOnInit(): void {
     this.libelleListe = this.route.snapshot.params['id']
     this.tirageService.getTirageParLibelle(this.libelleListe).subscribe((data: Tirage[]) =>{
       console.log(data)
       this.dataSource.data = data;
 
+    })
+    this.detailService.getListeParLibelle(this.libelleListe).subscribe(data=>{
+      console.log(data)
+      this.dateCreationListe = data.datel
     })
   }
   @ViewChild(MatPaginator) paginator!: MatPaginator;

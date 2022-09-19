@@ -34,6 +34,9 @@ nav {
     animation-iteration-count: infinite;
     animation-fill-mode: backwards;
 }
+.icon{
+  font-size: 30px;
+}
 
 @keyframes fadeInAnimation {
 

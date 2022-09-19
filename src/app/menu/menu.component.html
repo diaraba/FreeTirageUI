@@ -1,45 +1,46 @@
-
-<nav class="navbar navbar-expand-lg sticky-top" >
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-        <!-- Navbar brand -->
-        <div class="logoFont">
-            <a class="navbar-brand Logo" href="#">Free Tirage</a>
-        </div>
-
-
-        <!-- Toggle button -->
-        <button class="navbar-toggler toogle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left links -->
-
-            <!-- Left links -->
-            <!-- <ul class="navbar-nav ms-auto">
-                <li class="nav-item accueil">
-                  <a class="nav-link active" aria-current="page" href="/accueil">Accueil</a>
-                </li>
-                <li class="nav-item tirage">
-                  <a class="nav-link" href="/tirage">Nouveau Tirage</a>
-                </li>
-            </ul> -->
-
-             <div class=" navbar-nav ms-auto d-flex align-items-center">
-                <button type="button" class="btn btn-outline-success accueil nav-item nav-item1">
-                    <a class="nav-link nav-link2 active" routerLink="/accueil" >Accueil</a>
-                </button>
-                <button type="button" class="btn btn-outline-success tirage nav-item nav-item2">
-                    <a class="nav-link nav-link2" routerLink="/tirage">Nouveau Tirage</a>
-                </button>
-            </div>
-        </div>
-        <!-- Collapsible wrapper -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <div class="logoFont">
+      <a class="navbar-brand Logo" href="#">Free Tirage</a>
     </div>
-    <!-- Container wrapper -->
+
+
+    <!-- Toggle button -->
+    <button (click)="changeIcon()" class="navbar-toggler toogle" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+      <span class="icon" *ngIf="IconChange"><i class="bi bi-list"></i></span>
+      <span class="icon" *ngIf="!IconChange"><i class="bi bi-x-lg"></i></span>
+    </button>
+
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left links -->
+
+      <!-- Left links -->
+      <!-- <ul class="navbar-nav ms-auto">
+          <li class="nav-item accueil">
+            <a class="nav-link active" aria-current="page" href="/accueil">Accueil</a>
+          </li>
+          <li class="nav-item tirage">
+            <a class="nav-link" href="/tirage">Nouveau Tirage</a>
+          </li>
+      </ul> -->
+
+      <div class=" navbar-nav ms-auto d-flex align-items-center">
+        <button type="button" class="btn btn-outline-success accueil nav-item nav-item1">
+          <a class="nav-link nav-link2 active" routerLink="/accueil">Accueil</a>
+        </button>
+        <button type="button" class="btn btn-outline-success tirage nav-item nav-item2">
+          <a class="nav-link nav-link2" routerLink="/tirage">Nouveau Tirage</a>
+        </button>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->

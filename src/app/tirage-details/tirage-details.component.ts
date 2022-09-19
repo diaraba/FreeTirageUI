@@ -9,6 +9,7 @@ import {PostulantTireModel} from "../models/postulant-tire.model";
 import {PostulantTireService} from "../services/postulantTire/postulant-tire.service";
 import * as XLSX from 'xlsx';
 import {ListeDetailsService} from "../services/listedetails/liste-details.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-tirage-details',
@@ -32,7 +33,7 @@ export class TirageDetailsComponent implements OnInit {
   detailListe!: ListeDetail[];
   url = "/tirage-details"
   public libelleTirage!: string;
-  constructor(private listeService: ListeDetailsService,private postulantTireService: PostulantTireService,private tirageService: TirageService,private router: Router, private route: ActivatedRoute) {}
+  constructor(private location: Location,private listeService: ListeDetailsService,private postulantTireService: PostulantTireService,private tirageService: TirageService,private router: Router, private route: ActivatedRoute) {}
   listePostulantTire!: PostulantTireModel[];
   displayedColumns: string[] = ['nompt', 'prenompt','emailpt', 'numeropt'];
   dataSource = new MatTableDataSource<PostulantTireModel>(this.listePostulantTire);
@@ -62,7 +63,9 @@ export class TirageDetailsComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-
+  goBack(){
+    this.location.back()
+  }
 
 
 }

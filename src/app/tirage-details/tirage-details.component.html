@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h2 class="mt-4">LIBELE TIRAGE</h2>
     <hr>
-  <div class="row" >
+  <div class="row text-center" >
     <div class="col"><span class="titre">Date :</span> {{tirageDetail.datet | date}} </div>
     <div class="col"><span class="barreLateral">|</span> <span class="titre">Nombre de Postulant Tiré : </span>{{tirageDetail.nbredemande}} </div>
     <div class="col"><span class="barreLateral">|</span> <span class="titre">Libelle de la Liste : </span>{{libelleListe}} </div>
@@ -39,14 +39,14 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+    <mat-paginator [pageSizeOptions]="[5]"
                    showFirstLastButtons
                    aria-label="Select page of periodic elements">
     </mat-paginator>
   </div>
 </div>
 
-  <div class="m-3 retour"  [routerLink]="['/liste-details']" ><img class="cursor" width="100" src="../../assets/Group%204.svg" alt="" srcset=""></div>
+  <div class="m-3 retour" (click)="goBack()" ><img class="cursor" width="100" src="../../assets/Group%204.svg" alt="" srcset=""></div>
 
 
 

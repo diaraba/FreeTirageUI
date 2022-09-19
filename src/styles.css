@@ -49,6 +49,9 @@ hr {
     letter-spacing: 2px;
     font-weight: bolder !important;
   }
+  td{
+    font-size: 10px !important;
+  }
   .lien{
     text-decoration: none;
     color: black;
@@ -81,6 +84,4 @@ hr {
 /*
   Marge Appliquer a notre tableau
 */
-.marge{
-  margin-bottom: 165px;
-}
+

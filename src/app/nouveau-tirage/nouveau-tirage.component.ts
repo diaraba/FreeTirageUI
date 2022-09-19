@@ -5,6 +5,7 @@ import { Tirage } from '../models/tirage.model';
 import { ListeDetailsService } from '../services/listedetails/liste-details.service';
 import { TirageService } from '../services/tirage/tirage.service';
 import {ImportFichierService} from "../services/import-fichier/import-fichier.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-nouveau-tirage',
@@ -26,7 +27,7 @@ export class NouveauTirageComponent implements OnInit {
     nbredemande: number = 0;
     libelletirage: string = '';
 
-  constructor(private importFichierService: ImportFichierService,private tirageService: TirageService,private listeDetailService: ListeDetailsService) { }
+  constructor(private importFichierService: ImportFichierService,private tirageService: TirageService,private listeDetailService: ListeDetailsService, private route: Router) { }
 
   ngOnInit(): void {
     this.listeDetailService.getListeDetails().subscribe((data: ListeDetail[]) =>{
@@ -36,7 +37,7 @@ export class NouveauTirageComponent implements OnInit {
     })
   }
   alet(): void {
-    setInterval(() => {
+    setTimeout(() => {
       this.getData();
     }, 1000);
   }
@@ -62,10 +63,13 @@ export class NouveauTirageComponent implements OnInit {
     }else {
       this.tirageJson.libellel = this.libelletirage;
       this.tirageJson.nbredemande = this.nbredemande;
+      console.log(this.libelleliste)
       this.tirageService.CreerTirage(this.tirageJson, this.libelleliste).subscribe();
-      this.ressetForm();
+
       alert("TIRAGE EFFECTUER AVEC SUCCESS")
+
     }
+    this.ressetForm();
 
     //console.log(this.tirageJson);
     console.log(this.tirageJson.libellel);

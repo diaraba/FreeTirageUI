@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
 
-    <h2 class="mt-4">LIBELE LISTE</h2>
+    <h2 class="mt-4">DETAIL DE LA {{libelleListe}}</h2>
     <hr>
   <div class="row">
     <div class="col"><span class="titre"> Date :</span> {{dateCreationListe | date}} </div>
@@ -9,7 +9,7 @@
 </div>
 
 <div class="marge">
-  <div class="mat-elevation-z8 mt-2 posit">
+  <div class="mat-elevation-z8 mt-2 posit w-100">
     <table mat-table [dataSource]="dataSource">
 
       <!-- Position Column -->

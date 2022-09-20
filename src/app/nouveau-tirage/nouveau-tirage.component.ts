@@ -67,6 +67,8 @@ export class NouveauTirageComponent implements OnInit {
       this.tirageService.CreerTirage(this.tirageJson, this.libelleliste).subscribe();
 
       alert("TIRAGE EFFECTUER AVEC SUCCESS")
+      this.route.navigate(['/tirage-details',this.libelletirage])
+
 
     }
     this.ressetForm();

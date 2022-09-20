@@ -1,13 +1,3 @@
-<!-- <div class="position-relative">
-    <div class="position-absolute top-0 start-0 rectangle">
-
-        <p class="text-end">22</p>
-        <p class="text-end">Nombre Total de liste Tiré.</p>
-    </div>
-    <div class="position-absolute top-0 end-0 rectangle"></div>
-</div> -->
-
-
 <div class="container-fluid">
 
   <div class="row">
@@ -15,40 +5,86 @@
     <!--<div class="col-auto"><input type="text" value="" class="mt-4 inputCherche">
       <button type="submit" class="inputChercheButton"><i class="bi bi-search"></i></button></div>
 -->  </div>
-
-
   <hr>
 </div>
 
 <div class=" text-center marge">
+
+    <div class="jumbotron">
+      <div class="row w-100">
+
+        <div class="col m-2">
+          <div class="card shadow border-primary mx-sm-1 p-3 border border-5" style="height: 100% ;">
+            <div class="card border-primary  text-danger p-3 my-card"><img src="../../assets/le-total.png" height="20"
+                                                                           alt="image montrant le nombre total de liste">
+            </div>
+            <div class="text-primary text-center mt-3">
+              <h4>Nombre Total de Tirage</h4>
+            </div>
+            <div class="text-primary text-center mt-2">
+              <h1>{{nombreTotalDeTirage}}</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col m-2">
+          <div class="card shadow border-warning border border-5 mx-sm-1 p-3" style="height: 100% ;">
+            <div class="card border-warning shadow text-warning p-3 my-card"><img src="../../assets/totalement.png"
+                                                                                  height="20"
+                                                                                  alt="image montrant le nombre de liste tiré"
+                                                                                  srcset=""></div>
+            <div class="text-warning text-center mt-3">
+              <h4>nombre total de liste tiré</h4>
+            </div>
+            <div class="text-warning text-center mt-2">
+              <h1>{{nombreTotalDeListeTire}}</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col m-2">
+          <div class="card shadow border-primary mx-sm-1 p-3 border border-5" style="height: 100% ;">
+            <div class="card border-primary  text-primary p-3 my-card"><img src="../../assets/le-total.png"
+                                                                            height="20"
+                                                                            alt="image montrant le nombre total de liste">
+            </div>
+            <div class="text-primary text-center mt-3">
+              <h4>nombre total de liste</h4>
+            </div>
+            <div class="text-primary text-center mt-2">
+              <h1>{{nombreTotalListe}}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   <div class="row">
+
     <div class="col">
       <div class="mat-elevation-z8 ">
         <table mat-table [dataSource]="dataSource">
 
-          <!-- Position Column -->
-          <!-- <ng-container matColumnDef="idl">
-            <th mat-header-cell *matHeaderCellDef class="text-center"> id </th>
-            <td mat-cell *matCellDef="let element"> {{element.idl}} </td>
-          </ng-container> -->
-
           <!-- Name Column -->
           <ng-container matColumnDef="libellel">
             <th mat-header-cell *matHeaderCellDef class="text-center"> Liste des libelle</th>
-            <td  mat-cell *matCellDef="let element"  > <a class="lien" [routerLink]="[url,element.libellel]">{{element.libellel}}</a></td>
+            <td mat-cell *matCellDef="let element"><a class="lien"
+                                                      [routerLink]="[url,element.libellel]">{{element.libellel}}</a>
+            </td>
           </ng-container>
 
           <!-- Weight Column -->
           <ng-container matColumnDef="datel">
             <th mat-header-cell *matHeaderCellDef class="text-center"> Nombre de Tirage Par Liste</th>
-            <td mat-cell *matCellDef="let element; let i = index"  > {{nombre[i]}} </td>
+            <td mat-cell *matCellDef="let element; let i = index"><span
+              *ngIf="nombre[element.idl-1]"> {{nombre[element.idl - 1]}} </span> <span
+              *ngIf="!nombre[element.idl-1]"> 0 </span></td>
           </ng-container>
 
           <!-- Symbol Column -->
           <ng-container matColumnDef="Action">
             <th mat-header-cell *matHeaderCellDef class="text-center"> Action</th>
             <td mat-cell *matCellDef="let element" [routerLink]="[url,element.libellel]">
-              <img src="../../assets/information.png" class="button" height="25" alt="image montrant le button de recherche">
+              <img src="../../assets/information.png" class="button" height="25"
+                   alt="image montrant le button de recherche">
             </td>
           </ng-container>
 
@@ -56,56 +92,9 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
 
-         <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons
-          >
+        <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons
+        >
         </mat-paginator>
-      </div>
-    </div>
-    <div class="col">
-      <div class="jumbotron">
-        <div class="row w-100">
-
-          <div class="col m-2">
-            <div class="card shadow border-primary mx-sm-1 p-3 border border-5" style="height: 100% ;">
-              <div class="card border-primary  text-danger p-3 my-card"><img src="../../assets/le-total.png" height="20"
-                                                                            alt="image montrant le nombre total de liste">
-              </div>
-              <div class="text-primary text-center mt-3">
-                <h4>Nombre Total de Tirage</h4>
-              </div>
-              <div class="text-primary text-center mt-2">
-                <h1>{{nombreTotalDeTirage}}</h1>
-              </div>
-            </div>
-          </div>
-          <div class="col m-2">
-            <div class="card shadow border-warning border border-5 mx-sm-1 p-3" style="height: 100% ;">
-              <div class="card border-warning shadow text-warning p-3 my-card"><img src="../../assets/totalement.png"
-                                                                                    height="20"
-                                                                                    alt="image montrant le nombre de liste tiré"
-                                                                                    srcset=""></div>
-              <div class="text-warning text-center mt-3">
-                <h4>nombre total de liste tiré</h4>
-              </div>
-              <div class="text-warning text-center mt-2">
-                <h1>{{nombreTotalDeListeTire}}</h1>
-              </div>
-            </div>
-          </div>
-          <div class="col m-2">
-            <div class="card shadow border-primary mx-sm-1 p-3 border border-5" style="height: 100% ;">
-              <div class="card border-primary  text-primary p-3 my-card"><img src="../../assets/le-total.png" height="20"
-                                                                            alt="image montrant le nombre total de liste">
-              </div>
-              <div class="text-primary text-center mt-3">
-                <h4>nombre total de liste</h4>
-              </div>
-              <div class="text-primary text-center mt-2">
-                <h1>{{nombreTotalListe}}</h1>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

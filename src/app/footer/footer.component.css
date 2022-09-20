@@ -16,14 +16,14 @@ span{
 }
 .footer{
 
-  position: fixed; bottom: 0; left: 0; right: 0;
 }
+
 a{
   color: #FFFFFF !important;
-}
+}/*
 @media screen and (max-height: 200px) {
   .footer{
     position: initial; bottom: 0; left: 0; right: 0;
   }
-}
+}*/
 

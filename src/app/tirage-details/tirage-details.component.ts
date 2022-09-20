@@ -18,20 +18,11 @@ import {Location} from "@angular/common";
 })
 export class TirageDetailsComponent implements OnInit {
 
-  name = 'ExcelSheet.xlsx';
-  exportToExcel(): void {
-    let element = document.getElementById('season-tble');
-    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-
-    const book: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
-
-    XLSX.writeFile(book, this.name);
-  }
   libelleListe!: any
   tirageDetail!: Tirage
   detailListe!: ListeDetail[];
   url = "/tirage-details"
+  filterTerm!: string
   public libelleTirage!: string;
   constructor(private location: Location,private listeService: ListeDetailsService,private postulantTireService: PostulantTireService,private tirageService: TirageService,private router: Router, private route: ActivatedRoute) {}
   listePostulantTire!: PostulantTireModel[];
@@ -63,8 +54,20 @@ export class TirageDetailsComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+  /*code permett*/
   goBack(){
     this.location.back()
+  }
+  /*code permettant de fd'importer le fichier'*/
+  name = 'ListePostulantTire.xlsx';
+  exportToExcel(): void {
+    let element = document.getElementById('season-tble');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
   }
 
 

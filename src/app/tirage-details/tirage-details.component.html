@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <h2 class="mt-4">LIBELE TIRAGE</h2>
+    <h2 class="mt-4">DETAIL DU {{libelleTirage}}</h2>
     <hr>
   <div class="row text-center" >
     <div class="col"><span class="titre">Date :</span> {{tirageDetail.datet | date}} </div>
@@ -8,8 +8,9 @@
   </div>
 </div>
 <div class="text-center">
-  <div class="mat-elevation-z8 mt-2 posit">
-    <table mat-table [dataSource]="dataSource" id="season-tble">
+  <div class=" shadow mt-2">
+    <button type="submit" class="telecharger" (click)="exportToExcel()" ><i class="bi bi-box-arrow-up"></i> &nbsp; exporter</button>
+    <table mat-table [dataSource]="dataSource" class="posit" id="season-tble">
 
       <!-- Position Column -->
       <ng-container matColumnDef="nompt">
@@ -39,7 +40,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5]"
+    <mat-paginator [pageSizeOptions]="[5,10,20,50]"
                    showFirstLastButtons
                    aria-label="Select page of periodic elements">
     </mat-paginator>

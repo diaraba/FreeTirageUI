@@ -39,7 +39,22 @@ hr {
     border: 5px solid rgba(0, 0, 0, 0.2);
     margin-bottom: 25px;
 }
-
+.barreLateral{
+  color: #ffdb65;
+  margin-right: 20px;
+  font-size: 25px;
+  font-weight: bolder;
+  text-shadow: 2px 0px 2px #001427;
+}
+.titre{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px !important;
+  letter-spacing: 2px !important;
+  text-shadow: 1px 1px 1px darkgray;
+  color: #101a47 !important;
+}
 
 @media screen and (max-width: 991px) {
   th {
@@ -63,23 +78,27 @@ hr {
   h2{
     font-size: 100%;
   }
+  .titre{
+
+    font-weight: 600;
+    font-size: 14px !important;
+    letter-spacing: 1px !important;
+    text-shadow: 1px 1px 1px darkgray;
+    color: #101a47 !important;
+  }
+
 }
-.barreLateral{
-  color: #ffdb65;
-  margin-right: 20px;
-  font-size: 25px;
-  font-weight: bolder;
-  text-shadow: 2px 0px 2px #001427;
+@media screen and (max-width: 450px){
+  .titre{
+
+    font-weight: 600;
+    font-size: 12px !important;
+    letter-spacing: 1px !important;
+    text-shadow: 1px 1px 1px darkgray;
+    color: #101a47 !important;
+  }
 }
-.titre{
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px !important;
-  letter-spacing: 2px !important;
-  text-shadow: 1px 1px 1px darkgray;
-  color: #101a47 !important;
-}
+
 
 /*
   Marge Appliquer a notre tableau

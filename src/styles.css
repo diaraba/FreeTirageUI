@@ -55,6 +55,10 @@ hr {
   text-shadow: 1px 1px 1px darkgray;
   color: #101a47 !important;
 }
+table{
+
+  width: 80%!important;
+}
 
 @media screen and (max-width: 991px) {
   th {

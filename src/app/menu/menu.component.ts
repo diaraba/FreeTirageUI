@@ -8,12 +8,24 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   IconChange!: boolean;
+  activeAccueil!: boolean
+  activeTirage!: boolean
   constructor() { }
 
   ngOnInit(): void {
     this.IconChange = true;
+    this.activeAccueil = true;
+    this.activeTirage = false;
   }
 
+  changeColorButonAccueilMenu(){
+    this.activeAccueil = true;
+    this.activeTirage = false;
+  }
+  changeColorButonTirageMenu(){
+    this.activeAccueil = false;
+    this.activeTirage = true;
+  }
   changeIcon(){
     this.IconChange = !this.IconChange;
 

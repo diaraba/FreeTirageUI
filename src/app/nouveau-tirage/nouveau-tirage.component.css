@@ -101,3 +101,8 @@ label {
     }
 
 }
+.modal-title{
+  color: #101a47 !important;
+  font-size: 2em;
+  text-shadow:  2px 2px 2px #212529;
+}

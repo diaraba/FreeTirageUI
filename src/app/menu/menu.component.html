@@ -18,24 +18,14 @@
 
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Left links -->
 
-      <!-- Left links -->
-      <!-- <ul class="navbar-nav ms-auto">
-          <li class="nav-item accueil">
-            <a class="nav-link active" aria-current="page" href="/accueil">Accueil</a>
-          </li>
-          <li class="nav-item tirage">
-            <a class="nav-link" href="/tirage">Nouveau Tirage</a>
-          </li>
-      </ul> -->
 
       <div class=" navbar-nav ms-auto d-flex align-items-center">
-        <button type="button" class="btn btn-outline-success accueil nav-item nav-item1">
-          <a class="nav-link nav-link2 active" routerLink="/accueil">Accueil</a>
+        <button  type="button" class="btn btn-outline-success accueil nav-item nav-item1" routerLink="/" routerLinkActive="activate" [routerLinkActiveOptions]={exact:true}>
+          <a class="nav-link nav-link1"  >Accueil</a>
         </button>
-        <button type="button" class="btn btn-outline-success tirage nav-item nav-item2">
-          <a class="nav-link nav-link2" routerLink="/tirage">Nouveau Tirage</a>
+        <button type="button" class="btn btn-outline-success tirage nav-item nav-item2" routerLink="/tirage" routerLinkActive="activate">
+          <a class="nav-link nav-link2" >Nouveau Tirage</a>
         </button>
       </div>
     </div>

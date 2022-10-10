@@ -1,73 +1,132 @@
-
-
 <div class="container-fluid">
 
-    <h2 class="mt-4">Nouveau Tirage</h2>
-    <hr>
+  <h2 class="mt-4">Nouveau Tirage</h2>
+  <hr>
 </div>
-<form  class=" form1 container p-3 mt-5 mb-5  rounded">
-    <div class="container">
-        <div class="row m-3 ml-2 mr-2">
-            <div class="col-4"><label for="libelleTirage"> Libelle Tirage </label></div>
-            <div class="col-8"><input type="text" name="libelletirage" [(ngModel)]="libelletirage" class="form-control"
-                    id="libelleTirage">
-            </div>
-        </div>
-        <div class="row m-3 ml-2 mr-2">
-            <div class="col-4"><label for="nombreTirage"> Nombre Demande </label></div>
-            <div class="col-8"><input type="number" name="nbredemande" [(ngModel)]="nbredemande" class="form-control"
-                    id="nombreTirage">
-
-            </div>
-        </div>
-        <div class="row m-3">
-            <div class="col-4"><label for="libelleListe">Libelle Liste</label></div>
-            <div class="col-5">
-                <select id="libelleListe" class="form-select mb-3" [(ngModel)]="libelleliste" name="libelleliste">
-                  <option>-- Selectionner un Fichier --</option>
-                    <option *ngFor="let detaillist of detailListe"> {{detaillist.libellel}} </option>
-                </select>
-            </div>
-            <div class="col-3"> <button type="button" class="btn text-size btn-outline-success" data-bs-toggle="modal"
-                    data-bs-target="#AddEtudiant">importer fichier <i class="bi bi-upload"></i></button> </div>
-        </div>
-
+<form class=" form1 container p-3 mt-5 mb-5  rounded">
+  <div class="container">
+    <div class="row m-3 ml-2 mr-2">
+      <div class="col-4"><label for="libelleTirage"> Libelle Tirage </label></div>
+      <div class="col-8"><input type="text" name="libelletirage" [(ngModel)]="libelletirage" class="form-control"
+                                id="libelleTirage">
+      </div>
     </div>
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="submit" class="btn text-size btn-lg btn-outline-success" (click)="CreerTirage()"> Effectuer Tirage </button>
+    <div class="row m-3 ml-2 mr-2">
+      <div class="col-4"><label for="nombreTirage"> Nombre Demande </label></div>
+      <div class="col-8"><input type="number" name="nbredemande" [(ngModel)]="nbredemande" class="form-control"
+                                id="nombreTirage">
+
+      </div>
     </div>
+    <div class="row m-3">
+      <div class="col-4"><label for="libelleListe">Libelle Liste</label></div>
+      <div class="col-5">
+        <select id="libelleListe" class="form-select mb-3" [(ngModel)]="libelleliste" name="libelleliste">
+          <option>-- Selectionner un Fichier --</option>
+          <option *ngFor="let detaillist of detailListe"> {{detaillist.libellel}} </option>
+        </select>
+      </div>
+      <div class="col-3">
+        <button type="button" class="btn text-size btn-outline-success" data-bs-toggle="modal"
+                data-bs-target="#AddEtudiant">importer fichier <i class="bi bi-upload"></i></button>
+      </div>
+    </div>
+
+  </div>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button type="submit" class="btn text-size btn-lg btn-outline-success" (click)="CreerTirage()"
+            data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Effectuer Tirage
+    </button>
+  </div>
 </form>
 
 <div class="modal fade" id="AddEtudiant">
-    <div class="modal-dialog">
-        <div class="modal-content">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
 
-            <div class="modal-body">
-                <div class="card border-0 shadow p-3">
-                    <form>
-                        <div class="row mb-3">
-                            <div class="col-4"> <label for="Listelibelle" class="form-label">LIBELLE LISTE</label>
-                            </div>
-                            <div class="col-8">
-                                <input required type="text" id="Listelibelle" class="form-control" name="libelleList"  [(ngModel)]="libelleliste">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-8">
-                                <input type="file" (change)="envoiFichier($event)" class="text-nowrap text-truncate file">
-                            </div>
-
-                        </div>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" (click)="envoyerFichierParLeService()"  class="btn btn-outline-success" data-bs-dismiss="modal"><i
-                                    class="bi bi-upload"></i>
-                                Télécharger</button>
-                        </div>
-                    </form>
-                </div>
+      <div class="modal-body">
+        <div class="card border-0 shadow p-3">
+          <form>
+            <div class="row mb-3">
+              <div class="col-4"><label for="Listelibelle" class="form-label">Libelle Liste</label>
+              </div>
+              <div class="col-8">
+                <input required type="text" id="Listelibelle" class="form-control" name="libelleList"
+                       [(ngModel)]="libelleliste">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col">
+                <input type="file" (change)="envoiFichier($event)" class="text-nowrap text-truncate file">
+              </div>
 
             </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button type="submit" (click)="envoyerFichierParLeService()" class="btn btn-outline-success"
+                      data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#messageImportation"><i
+                class="bi bi-upload"></i>
+                Télécharger
+              </button>
+            </div>
+          </form>
         </div>
+
+      </div>
     </div>
+  </div>
+</div>
+<!--
+Pop up pour gerer les message lors de tirage
+-->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">BOITE D'ALERTE</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center alert alert-success" *ngIf="poppup">Tirage effectué avec success <img
+          src="../../assets/succes.png" width="30" alt="image montrant le success"></p>
+        <p class="text-center alert alert-danger" role="alerte" *ngIf="!poppup">Erreur Veuillez bien verifier les champs
+          et les Caractères !</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary" (click)="GoToDetailTirage()"
+                data-bs-dismiss="modal">Postulants
+          Tirés
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--
+Pop up pour gerer les message lors de l'importation
+-->
+<div class="modal fade" id="messageImportation" data-bs-backdrop="static" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="messageImportationr">BOITE D'ALERTE</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center alert alert-danger" role="alerte" *ngIf="!importpopup">Erreur Lors de l'importation ! <br> Veuillez Bien Verifier les champs !</p>
+        <p class="text-center alert alert-success" role="alerte" *ngIf="importpopup">Fichier Importer avec success !
+          <img
+            src="../../assets/succes.png" width="30" alt="image montrant le success"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+
+      </div>
+    </div>
+  </div>
+
 </div>
 
